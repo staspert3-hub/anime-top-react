@@ -1,0 +1,48 @@
+import { motion } from "framer-motion";
+import useStore from "../storage/storeAnime"
+
+const Vb = {
+  hidden:{opacity:1},    // начальное состояние анимации
+  visible:{            //конечное состояние анимации
+    opacity:1,            
+    transition:{
+      staggerChildren:0.2,          //задежрка анимации детей
+      //delayChildren:5,           //задержка анимации детей
+    }
+  }
+} 
+
+const Va = {
+  hidden:{x:-20 , opacity:0},
+  visible:{x:0 , opacity:1}
+}
+
+const MoiTop: React.FunctionComponent = () => {
+  const store = useStore((state) => state.spisokAnime)
+  return (
+    <div className="flex items-center flex-col  mt-9 gap-15">
+      <motion.h1 className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-9"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{duration:0.4 , ease:'easeInOut'}}
+      >
+        🔥просмотреные аниме🔥
+      </motion.h1>
+      <motion.div className=" grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
+        variants={Vb} animate="visible" initial="hidden"
+      >
+        {store.map((value,index) => {
+          return (
+            <motion.div key={`${value}-${index}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
+              variants={Va}
+            >
+              {value}
+            </motion.div>
+          )
+        })}
+      </motion.div>
+    </div>
+  )
+};
+
+export default MoiTop;
