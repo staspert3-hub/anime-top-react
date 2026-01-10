@@ -31,9 +31,9 @@ const MoiTop: React.FunctionComponent = () => {
       <motion.div className=" grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
         variants={Vb} animate="visible" initial="hidden"
       >
-        {store.map((value,index) => {
+        {store.map((value) => {
           return (
-            <motion.div key={`${value}-${index}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
+            <motion.div key={`${value}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
               variants={Va}
             >
               {value}
