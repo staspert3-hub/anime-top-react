@@ -45,7 +45,7 @@ const MoiTop: React.FunctionComponent = () => {
       >
         {store.map((value , index) => {
           return (
-            <motion.div key={`${value}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
+            <motion.div key={`${value}-${index}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
               variants={Va}
               onClick={() => {
                 Ref.current = index
