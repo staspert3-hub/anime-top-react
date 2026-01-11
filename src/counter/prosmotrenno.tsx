@@ -21,13 +21,20 @@ const MoiTop: React.FunctionComponent = () => {
   const store = useStore((state) => state.spisokAnime)
   return (
     <div className="flex items-center flex-col  mt-9 gap-15">
-      <motion.h1 className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-9"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{duration:0.4 , ease:'easeInOut'}}
-      >
-        🔥просмотреные аниме🔥
-      </motion.h1>
+      <motion.h1
+  className="
+    bg-gradient-to-r from-blue-600 to-cyan-500
+    bg-clip-text text-transparent
+    mb-9
+    text-xl sm:text-2xl md:text-3xl lg:text-4xl
+    font-bold
+  "
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4, ease: 'easeInOut' }}
+>
+  🔥просмотренные аниме🔥
+</motion.h1>
       <motion.div className=" grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
         variants={Vb} animate="visible" initial="hidden"
       >
