@@ -24,10 +24,6 @@ const MoiTop: React.FunctionComponent = () => {
   const [state , setState] = useState(false)
   let Ref = useRef(0)
 
-  function handleClick(index:number) {
-
-  }
-
   return (
     <div className="flex items-center flex-col  mt-9 gap-15">
       <motion.p
