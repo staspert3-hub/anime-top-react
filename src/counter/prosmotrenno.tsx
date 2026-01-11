@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import useStore from "../storage/storeAnime"
+import { useRef, useState } from "react";
+import DeleteAnime from "../components/deleteAnime";
 
 const Vb = {
   hidden:{opacity:1},    // начальное состояние анимации
@@ -19,6 +21,13 @@ const Va = {
 
 const MoiTop: React.FunctionComponent = () => {
   const store = useStore((state) => state.spisokAnime)
+  const [state , setState] = useState(false)
+  let Ref = useRef(0)
+
+  function handleClick(index:number) {
+
+  }
+
   return (
     <div className="flex items-center flex-col  mt-9 gap-15">
       <motion.p
@@ -38,16 +47,25 @@ const MoiTop: React.FunctionComponent = () => {
       <motion.div className=" grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
         variants={Vb} animate="visible" initial="hidden"
       >
-        {store.map((value) => {
+        {store.map((value , index) => {
           return (
             <motion.div key={`${value}`} className=" shadow-black shadow hover:shadow-2xl  active:scale-90 border-2 border-white/20 rounded-2xl p-10 flex items-center justify-center text-xl bg-white/5 hover:border-white/40 transition-all" 
               variants={Va}
+              onClick={() => {
+                Ref.current = index
+                setState((state) => !state)
+              }}
             >
               {value}
             </motion.div>
           )
         })}
       </motion.div>
+      <AnimatePresence>
+        {state && 
+          <DeleteAnime setState={setState} Ref={Ref}/>
+        }
+      </AnimatePresence>
     </div>
   )
 };
