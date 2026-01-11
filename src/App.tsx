@@ -16,8 +16,8 @@ function App() {
       <Head/>
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.key}>
-          <Route path='/' element={<Animate><Prosmotrenno/></Animate>}></Route>
-          <Route path='/top' element={<Animate><MoiTop/></Animate>}></Route>
+          <Route path='/' element={<Animate><MoiTop/></Animate>}></Route>
+          <Route path='/top' element={<Animate><Prosmotrenno/></Animate>}></Route>
         </Routes>
       </AnimatePresence>
     </>
