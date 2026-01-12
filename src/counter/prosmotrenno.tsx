@@ -22,7 +22,7 @@ const Va = {
 const MoiTop: React.FunctionComponent = () => {
   const store = useStore((state) => state.spisokAnime)
   const [state , setState] = useState(false)
-  let Ref = useRef(0)
+  let Ref = useRef<number>(0)
 
   return (
     <div className="flex items-center flex-col  mt-9 gap-15">

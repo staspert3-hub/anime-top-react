@@ -7,7 +7,7 @@ type Anime = {
     deleteAnime:(index:number) => void,
 }
 
-const stateAnime = create<Anime>()(persist(set => ({
+const stateAnime = create<Anime>()(persist((set) => ({
     spisokAnime:["Атака Титанов 🔥"],
     addAnime:(anime:string) => set(state => ({
        spisokAnime:[...state.spisokAnime , anime]
