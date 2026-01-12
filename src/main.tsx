@@ -7,7 +7,6 @@ import Snowfall from 'react-snowfall'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <div style={{ position: 'relative', width: '100vw', height: '100vh' }}> */}
       {/* Снежинки накладываются поверх контента */}
       <Snowfall 
         color="white" 
@@ -16,12 +15,11 @@ createRoot(document.getElementById('root')!).render(
           position: 'fixed',
           width: '100vw',
           height: '100vh',
-          zIndex: 9999 // Чтобы снег был поверх всего
+          zIndex: 900 // Чтобы снег был поверх всего
         }}
       />
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    {/* </div> */}
   </StrictMode>,
 )
