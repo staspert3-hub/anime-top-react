@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import useStore from "../storage/storeAnime"
 import { useRef, useState } from "react";
 import DeleteAnime from "../components/deleteAnime";
-import Snowfall from 'react-snowfall'
+/* import Snowfall from 'react-snowfall' */
 
 const Vb = {
   hidden:{opacity:1},    // начальное состояние анимации
