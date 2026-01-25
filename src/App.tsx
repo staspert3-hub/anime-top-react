@@ -14,6 +14,7 @@ function App() {
     <>
       <Header/>
       <Head/>
+      {/* Снежинки накладываются поверх контента */}
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.key}>
           <Route path='/' element={<Animate><MoiTop/></Animate>}></Route>
